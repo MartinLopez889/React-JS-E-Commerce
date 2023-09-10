@@ -22,7 +22,7 @@ const NavBar = () =>
       </ul>
       
       <div className="position-absolute top-50 end-0 translate-middle bg-success p-2 text-white border border-black border-2 rounded">
-      <CartWidget /> En el carrito: <span className= "bg-danger border border-black border-2 rounded ">2  </span>
+      <CartWidget /> 
       </div>
     </div>
   </div>
