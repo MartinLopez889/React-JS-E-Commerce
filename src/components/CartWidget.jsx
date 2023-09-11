@@ -3,10 +3,12 @@ import {BsCartPlus} from 'react-icons/bs'
 
 const CartWidget = () => {
   return (
-    <BsCartPlus/>, 
-    <div>
+    <>
+      <BsCartPlus/> 
+      <span>
         En el carrito: <span className= "bg-danger border border-black border-2 rounded ">2</span>
-    </div>
+      </span>
+    </>
   )
 }
 
