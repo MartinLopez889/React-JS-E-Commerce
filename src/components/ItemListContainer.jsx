@@ -15,28 +15,42 @@ const ItemListContainer = (props) => {
             title: 'Goku',
             description: 'Figura Funko Pop - Dragon Ball',
             price: 10,
-            pictureUrl: 'img1.jpg',
+            pictureUrl: '../images/goku.png',
           },
           {
             id: 2,
-            title: 'Vegetta',
+            title: 'Vegeta',
             description: 'Figura Funko Pop - Dragon Ball',
             price: 10,
-            pictureUrl: 'img2.jpg',
+            pictureUrl: '../images/vegeta.png',
           },
           {
             id: 3,
             title: 'Gohan',
             description: 'Figura Funko Pop - Dragon Ball',
             price: 10,
-            pictureUrl: 'img3.jpg',
+            pictureUrl: '../images/gohan.webp',
           },
           {
             id: 4,
             title: 'Trunks',
             description: 'Figura Funko Pop - Dragon Ball',
             price: 10,
-            pictureUrl: 'img4.jpg',
+            pictureUrl: '../images/trunks.png',
+          },
+          {
+            id: 5,
+            title: 'Bulma',
+            description: 'Figura Funko Pop - Dragon Ball',
+            price: 10,
+            pictureUrl: '../images/bulma.png',
+          },
+          {
+            id: 6,
+            title: 'Piccolo',
+            description: 'Figura Funko Pop - Dragon Ball',
+            price: 10,
+            pictureUrl: '../images/piccolo.png',
           }
         ];
         setItems(mockData);
