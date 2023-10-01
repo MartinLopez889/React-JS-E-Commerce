@@ -5,6 +5,7 @@ function Item ({ id, title, description, price, pictureUrl }) {
       <div className="item">
         <img src={pictureUrl} alt={title} />
         <h3>{title}</h3>
+        <p>{id}</p>
         <p>{description}</p>
         <p>Precio: ${price}</p>
       </div>
