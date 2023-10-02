@@ -23,6 +23,10 @@ const ItemListContainer = (props) => {
   }, []);
 
   const { greeting, titulo } = props;
+  const onAdd = (cantidad) =>{
+    console.log(`Compraste ${cantidad} productos`)
+  }
+
 
   return (
     <div className="bg-info">
@@ -35,7 +39,7 @@ const ItemListContainer = (props) => {
           <p>Error: {error}</p>
         ) : (<ItemList items={items} />)}
       </div>
-      <ItemCount stock={5} onAdd={(cantidad) => console.log(`Agregado al carrito: ${cantidad}`)} />
+      <ItemCount initial={1} stock={10} onAdd={onAdd} />
     </div>
   )
 }
