@@ -7,7 +7,7 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     getData()
-      .then((data) => setItem(data))
+      .then((data) => setItem(data.find((item)=> item.title === 'Vegeta')))
       .catch((error) => console.log(error));
   }, []);
   console.log(item)
