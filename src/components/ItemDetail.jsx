@@ -1,6 +1,7 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 
+
 const ItemDetail = ({item}) => {
   const onAdd = (cantidad) => {
     console.log(`Compraste ${cantidad} del producto ${item.title}`)

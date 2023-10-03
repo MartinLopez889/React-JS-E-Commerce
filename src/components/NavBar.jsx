@@ -1,32 +1,30 @@
 import React from "react"
 import CartWidget from "./CartWidget"
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import { NavLink } from "react-router-dom";
 
-const NavBar = () => 
-<nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <a className="navbar-brand " href="#">Todo DBZ</a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarNav">
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="#">Pop!</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">Keychain</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="#">T-shirts</a>
-        </li>
-      </ul>
-      
+ 
+function NavBar() {
+  return (
+    <Navbar expand="lg" className="bg-body-tertiary">
+      <Container>
+        <Navbar.Brand as={NavLink} to="/">Todo DBZ!</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link as={NavLink} to="#home">Pop!</Nav.Link>
+            <Nav.Link as={NavLink} to="#link">Keychain</Nav.Link>
+            <Nav.Link as={NavLink} to="#link">Tees</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
       <div className="position-absolute top-50 end-0 translate-middle bg-success p-2 text-white border border-black border-2 rounded">
-      <CartWidget /> 
-      </div>
-    </div>
-  </div>
-</nav>
+      <CartWidget /></div>
+    </Navbar>
+  );
+}
 
 
 export default NavBar;

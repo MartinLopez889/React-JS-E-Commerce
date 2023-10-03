@@ -1,15 +1,20 @@
 import React from 'react'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
-function Item ({ id, title, description, price, pictureUrl, }) {
-    return (
-      <div className="item">
-        <img src={pictureUrl} alt={title} />
-        <h3>{title}</h3>
-        <p>{id}</p>
-        <p>{description}</p>
-        <p>Precio: ${price}</p>
-      </div>
-    );
-  }
+
+function Item ({ id, title, description, price, pictureUrl, }){
+  return (
+    <Card style={{ width: '18rem' }}>
+      <Card.Img variant="top" src={pictureUrl} />
+      <Card.Body>
+        <Card.Title>{id} {title}</Card.Title>
+        <Card.Text>{description}</Card.Text>
+        <Card.Text>Precio: {price}</Card.Text>
+        <Button variant="primary">Ver más</Button>
+      </Card.Body>
+    </Card>
+  );
+}
 
 export default Item
