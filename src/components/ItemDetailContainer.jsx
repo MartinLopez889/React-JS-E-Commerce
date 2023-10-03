@@ -1,16 +1,23 @@
 import React, {useState, useEffect} from 'react'
 import { getData } from './mock/data'
+import ItemDetail from './ItemDetail';
 
 const ItemDetailContainer = () => {
-  const [items, setItems] = useState([]);
+  const [item, setItem] = useState({});
 
   useEffect(() => {
     getData()
-      .then((data) => setItems(data))
+      .then((data) => setItem(data))
       .catch((error) => console.log(error));
   }, []);
-  console.log(items)
+  console.log(item)
 
+
+  return(
+    <div>
+      <ItemDetail item={item}/>
+    </div>
+  )
 }
 
 export default ItemDetailContainer

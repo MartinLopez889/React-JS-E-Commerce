@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Item ({ id, title, description, price, pictureUrl }) {
+function Item ({ id, title, description, price, pictureUrl, }) {
     return (
       <div className="item">
         <img src={pictureUrl} alt={title} />
