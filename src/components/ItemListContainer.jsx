@@ -1,31 +1,33 @@
 import React, { useState, useEffect } from 'react'
-import ItemCount from './ItemCount'
 import ItemList from './ItemList'
 import { getData } from './mock/data'
+import { useParams } from 'react-router-dom'
 
 const ItemListContainer = (props) => {
 
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [items, setItems] = useState([]);
-
+  const {categoryId}=useParams()
+  console.log(categoryId)
   useEffect(() => {
+    setLoading(true)
     getData()
       .then((data) => {
+        if(categoryId){
+          setItems(data.filter(prod=>prod.category === categoryId));
+        }else{
         setItems(data);
-        setLoading(false);
+      }
       })
       .catch((error) => {
         setError(error);
-        setLoading(false);
-      });
-  }, []);
+      })
+      .finally(()=> setLoading(false))
+  }, [categoryId]);
 
   const { greeting, titulo } = props;
-  const onAdd = (cantidad) =>{
-    console.log(`Compraste ${cantidad} productos`)
-  }
 
 
   return (
@@ -39,7 +41,6 @@ const ItemListContainer = (props) => {
           <p>Error: {error}</p>
         ) : (<ItemList items={items} />)}
       </div>
-      <ItemCount initial={1} stock={10} onAdd={onAdd} />
     </div>
   )
 }
