@@ -10,7 +10,7 @@ function ItemCount({ initial, stock, onAdd }) {
   };
 
   const restarContador = () => {
-    if (contador > 0) {
+    if (contador > 1) {
       setContador(contador - 1);
     }
   };
