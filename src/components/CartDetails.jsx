@@ -25,7 +25,6 @@ const CartDetails = () => {
                 </div>
             ) : (
                 <>
-                    <div>
                         {cart.map((item) => (
                             <div key={item.id}>
                                 <img src={item.pictureUrl} alt={item.title} />
@@ -37,7 +36,6 @@ const CartDetails = () => {
                                 <hr />
                             </div>
                         ))}
-                    </div>
                     <hr />
                     <p>Precio total: {totalPrice}</p>
                     <button onClick={handleClearCart}>Vaciar Carrito</button>

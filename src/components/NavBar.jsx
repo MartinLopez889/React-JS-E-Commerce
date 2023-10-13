@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
  
 function NavBar() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" sticky="top" className="bg-body-tertiary">
       <Container>
         <Navbar.Brand as={NavLink} to="/">Todo DBZ!</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
