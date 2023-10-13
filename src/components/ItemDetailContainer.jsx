@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
     getData()
       .then((data) => setItem(data.find((item)=> item.id === parseInt(id))))
       .catch((error) => console.log(error));
-  }, []);
+  }, [id]);
   console.log(item)
 
 
