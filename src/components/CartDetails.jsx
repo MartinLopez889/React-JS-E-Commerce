@@ -18,8 +18,9 @@ const CartDetails = () => {
     const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
 
     return (
-        <div className='bg-info'>
-            <h2>Detalles del Carrito</h2>
+        <>
+        <h2>Detalles del Carrito</h2>
+        <div className='bg-info d-flex flex-wrap justify-content-around align-items-center'>
             {cart.length === 0 ? (
                 <div>
                     <p>No hay items en el carrito</p>
@@ -38,12 +39,16 @@ const CartDetails = () => {
                                 <hr />
                             </div>
                         ))}
-                    <hr />
-                    <p>Precio total: {totalPrice}</p>
-                    <Button variant='danger' onClick={handleClearCart}>Vaciar Carrito</Button>
+                        <div>
+                        <Button variant='danger' onClick={handleClearCart}>Vaciar Carrito</Button>
+                        <hr />
+                        <br />
+                        <p className='fs-3'>Precio total: ${totalPrice} <span><Button className='bg-success'>Abonar</Button></span></p>
+                        </div>
                 </>
             )}
         </div>
+        </>
     );
 };
 
