@@ -16,7 +16,7 @@ const ItemDetailContainer = () => {
 
 
   return(
-    <div>
+    <div className='detalle bg-info fw-semibold'>
       <ItemDetail item={item}/>
     </div>
   )

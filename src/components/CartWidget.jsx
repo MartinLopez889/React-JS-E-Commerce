@@ -20,7 +20,11 @@ const CartWidget = () => {
   }, [cart]);
 
   if (!mostrar) {
-    return null;
+    return (
+      <Link to="/cart" className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+        En el carrito: <span className="bg-danger border border-black border-2 rounded"> 0</span>
+      </Link>
+    );
   }
 
   return (
