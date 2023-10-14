@@ -29,7 +29,8 @@ function ItemCount({ initial, stock, onAdd }) {
         <span className='btn'>{contador}</span>
         <Button variant="primary" onClick={sumarContador}>+</Button>
       </div>
-      <Button variant="warning" onClick={agregarAlCarrito} disabled={stock === 0}>Agregar</Button>
+      <hr />
+      <Button variant="primary" onClick={agregarAlCarrito} disabled={stock === 0}>Agregar</Button>
     </>
   );
 }
