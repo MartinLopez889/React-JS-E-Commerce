@@ -28,7 +28,7 @@ function ItemCount({ initial, stock, onAdd }) {
         <Button variant="primary" onClick={restarContador}>
           -
         </Button>
-        <span>{contador}</span>
+        <span> {contador} </span>
         <Button variant="primary" onClick={sumarContador}>
           +
         </Button>
