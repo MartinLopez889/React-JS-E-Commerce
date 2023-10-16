@@ -2,11 +2,11 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import NavBar from "./components/NavBar";
-import ItemListContainer from "./components/ItemListContainer";
-import ItemDetailContainer from "./components/ItemDetailContainer";
+import ItemListContainer from "./components/ItemList/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartProvider } from "./contexts/CartContext";
-import CartDetails from "./components/CartDetails";
+import CartDetails from "./components/Cart/CartDetails";
 
 function App() {
   return (

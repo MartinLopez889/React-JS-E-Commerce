@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ItemCount from "./ItemCount";
-import { useCartContext } from "../contexts/CartContext";
+import ItemCount from "../ItemCount";
+import { useCartContext } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
