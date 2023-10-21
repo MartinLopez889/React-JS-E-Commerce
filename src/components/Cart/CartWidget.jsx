@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { BsCartPlus } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
-import { useCartContext } from '../../contexts/CartContext';
+import React, { useState, useEffect } from "react";
+import { BsCartPlus } from "react-icons/bs";
+import { Link } from "react-router-dom";
+import { useCartContext } from "../../contexts/CartContext";
 
 const CartWidget = () => {
   const { cart } = useCartContext();
@@ -21,16 +21,29 @@ const CartWidget = () => {
 
   if (!mostrar) {
     return (
-      <Link to="/cart" className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-        En el carrito: <span className="bg-danger border border-black border-2 rounded"> 0</span>
+      <Link
+        to="/cart"
+        className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+      >
+        En el carrito:{" "}
+        <span className="bg-danger border border-black border-2 rounded">
+          {" "}
+          0
+        </span>
       </Link>
     );
   }
 
   return (
     <>
-      <Link to="/cart" className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
-        En el carrito: <span className="bg-danger border border-black border-2 rounded">{totalItems}</span>
+      <Link
+        to="/cart"
+        className="link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"
+      >
+        En el carrito:{" "}
+        <span className="bg-danger border border-black border-2 rounded">
+          {totalItems}
+        </span>
       </Link>
       <Link to="/cart">
         <button>

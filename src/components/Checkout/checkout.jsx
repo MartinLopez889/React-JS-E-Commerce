@@ -3,11 +3,11 @@ import { useState } from "react";
 import Form from "react-bootstrap/Form";
 import { db } from "../../services/firebase";
 import { useCartContext } from "../../contexts/CartContext";
- 
+
 const Checkout = () => {
   const [user, setUser] = useState({});
   const [validateEmail, setValidateEmail] = useState("");
-  const { cart, totalPrice }= useCartContext()
+  const { cart, totalPrice } = useCartContext();
 
   const datosComprador = (e) => {
     setUser({
@@ -17,25 +17,26 @@ const Checkout = () => {
   };
 
   const terminarCompra = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     let order = {
       user,
-      Items:cart,
+      Items: cart,
       total: totalPrice,
-      date:serverTimestamp(),
-    }
-    const ventas = collection(db, 'orders')
-    addDoc(ventas,order)
-    .then((res)=> console.log(res.id))
-    .catch((error)=> console.log(error))
-  }
+      date: serverTimestamp(),
+    };
+    const ventas = collection(db, "orders");
+    addDoc(ventas, order)
+      .then((res) => console.log(res.id))
+      .catch((error) => console.log(error));
+  };
 
   const camposLlenos = user.name && user.email && validateEmail === user.email;
 
-    
-
   return (
-    <Form className="m-5 pt-2 col-4 position-absolute top-50 start-0 translate-middle-y border border-black ml-4 bg-primary text-white" onSubmit={terminarCompra}>
+    <Form
+      className="m-5 pt-2 col-4 position-absolute top-50 start-0 translate-middle-y border border-black ml-4 bg-primary text-white"
+      onSubmit={terminarCompra}
+    >
       <Form.Group className="mb-3 p-2" controlId="formGroupName">
         <Form.Label>Nombre</Form.Label>
         <Form.Control
@@ -62,7 +63,7 @@ const Checkout = () => {
           className="border border-black bg-body-secondary"
           type="email"
           name="email"
-          onChange={((e)=> setValidateEmail(e.target.value))}
+          onChange={(e) => setValidateEmail(e.target.value)}
           placeholder="email@blabla.com"
         />
       </Form.Group>
@@ -75,7 +76,11 @@ const Checkout = () => {
           placeholder="Ingrese su contraseña"
         />
       </Form.Group>
-      <button className="btn btn-dark m-3 " type="submit" disabled={!camposLlenos}>
+      <button
+        className="btn btn-dark m-3 "
+        type="submit"
+        disabled={!camposLlenos}
+      >
         Generar orden
       </button>
     </Form>

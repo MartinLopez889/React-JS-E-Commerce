@@ -11,7 +11,6 @@ const ItemDetail = ({ item }) => {
   const onAdd = (cantidad) => {
     setRequestedItems(cantidad);
     addItem(item, cantidad);
-    console.log(`Compraste ${cantidad} del producto ${item.title}`);
   };
 
   return (
