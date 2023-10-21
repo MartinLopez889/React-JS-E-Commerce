@@ -21,7 +21,7 @@ function ItemCount({ initial, stock, onAdd }) {
       onAdd(contador);
     }
   };
-  
+
   return (
     <>
       <div>

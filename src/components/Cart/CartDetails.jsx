@@ -3,21 +3,8 @@ import { useCartContext } from "../../contexts/CartContext";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
-const CartDetails = () => {
-  const { cart, removeItem, clear } = useCartContext();
-
-  const handleRemoveItem = (itemId) => {
-    removeItem(itemId);
-  };
-
-  const handleClearCart = () => {
-    clear();
-  };
-
-  const totalPrice = cart.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+export const CartDetails = () => {
+  const { cart, removeItem, clear, totalPrice } = useCartContext();
 
   return (
     <>
@@ -37,17 +24,14 @@ const CartDetails = () => {
                 <p>Cantidad seleccionada: {item.quantity}</p>
                 <p>Precio c/u: ${item.price}</p>
                 <p>Total: ${item.price * item.quantity}</p>
-                <Button
-                  variant="warning"
-                  onClick={() => handleRemoveItem(item.id)}
-                >
+                <Button variant="warning" onClick={() => removeItem(item.id)}>
                   Eliminar
                 </Button>
                 <hr />
               </div>
             ))}
             <div>
-              <Button variant="danger" onClick={handleClearCart}>
+              <Button variant="danger" onClick={clear}>
                 Vaciar Carrito
               </Button>
               <hr />
@@ -55,7 +39,9 @@ const CartDetails = () => {
               <p className="fs-3">
                 Precio total: ${totalPrice}{" "}
                 <span>
-                  <Button className="bg-success">Abonar</Button>
+                  <Link className="btn btn-light bg-success" to="/checkout">
+                    Abonar
+                  </Link>
                 </span>
               </p>
             </div>
